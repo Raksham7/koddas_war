@@ -1,14 +1,14 @@
 pipeline {
-    agent any 
+  agent any 
     stages{
-        stage("Build"){
+        stage("checkout"){
             steps{
                 git credentialsId: 'git', url: 'https://github.com/Raksham7/koddas_war.git'
             }
         }
         stage("UNIT Testing"){
             steps{
-                sh 'mvn test' 
+                sh 'mvn clean test' 
             }
         }
         stage('Integration Testing'){
