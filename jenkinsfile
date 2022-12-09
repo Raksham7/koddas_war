@@ -1,0 +1,20 @@
+pipeline {
+    agent any 
+    stages{
+        stage("Build"){
+            steps{
+                git credentialsId: 'Boxfuse', url: 'https://github.com/Raksham7/boxfuse.git'
+            }
+        }
+        stage("UNIT Testing"){
+            steps{
+                sh 'mvn test' 
+            }
+        }
+        stage('Integration Testing'){
+            steps{
+                sh 'mvn verify -DskipUnitTests'
+            }
+        }
+     }
+}
