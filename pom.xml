@@ -21,6 +21,7 @@
          <sonar.host.url>http://3.238.99.3:9000/</sonar.host.url>
                 <sonar.login>admin</sonar.login>
                 <sonar.token>38661648a7b43be13ed2cd003b44f1a9657bb00a</sonar.token>
+	<sonar.java.binaries>${basedir}\\target\\classes</sonar.java.binaries>
 	
    </properties>
 	
