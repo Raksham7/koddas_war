@@ -21,15 +21,14 @@
          <sonar.host.url>http://3.238.99.3:9000/</sonar.host.url>
                 <sonar.login>admin</sonar.login>
                 <sonar.password>admin1</sonar.password>
-	<sonar.projectName>Koddas</sonar.projectName>
-        <sonar.sources>.</sonar.sources>
-        <sonar.java.binaries>${basedir}\\target\\classes</sonar.java.binaries>
-        <sonar.jacoco.reportPath>${basedir}\\target\\jacoco.exec</sonar.jacoco.reportPath>
-        <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
-        <sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
-        <sonar.java.source>1.8</sonar.java.source>
-		
-  </properties>
+	
+   </properties>
+     <properties>
+        <sonar.host.url>http://3.238.99.3:9000/</sonar.host.url>
+        <sonar.log.level>DEBUG</sonar.log.level>
+        <sonar.verbose>true</sonar.verbose>
+        <sonar.coverage.exclusions>**/*.js</sonar.coverage.exclusions>
+     </properties>
 	
   <dependencies>
   	<dependency>
