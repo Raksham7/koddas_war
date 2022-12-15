@@ -6,5 +6,10 @@ pipeline {
                 git credentialsId: 'git', url: 'https://github.com/Raksham7/koddas_war.git'
             }
         }
+        stage("Unit Testing"){
+            steps{
+                sh 'mvn clean test' 
+            }
+        }
      }
 }
