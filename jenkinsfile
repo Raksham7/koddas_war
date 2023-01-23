@@ -23,12 +23,16 @@ pipeline {
         }
         stage("Sonar Scanner"){
             steps{
-                script{
-                    withSonarQubeEnv(credentialsId: 'sonar-apikey'){
-                     sh 'mvn clean sonar:sonar'
-                 }
-                }
-            }           
-        }
+             def scannerHome = tool 'sonarqube';
+             withSonarQubeEnv('sonarqube'){
+                 sh "${scannerHome}/bin/sonar-scanner \
+                 -D sonar.login=admin \
+                 -D sonar.password=admin1 \
+                 -D sonar.projectkey=sonarqubetest \
+                 -D sonar.exclusions=vendor/**,resources/**,**/*.java \
+                 -D sonar.host.url=http:http://18.204.194.117:9000/"
+             }
+            }
+         }
      }
 }
