@@ -6,9 +6,9 @@ pipeline {
                 git credentialsId: 'git', url: 'https://github.com/Raksham7/koddas_war.git'
             }
         }
-        stage("Maven Build"){
-            steps{
-                sh 'clean install package'
+        stage('Build') {
+            steps {
+                sh "mvn clean install"
             }
         }
      }
