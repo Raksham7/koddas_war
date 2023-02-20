@@ -1,14 +1,14 @@
 pipeline {
   agent any 
     stages{
-        stage("checkout"){
+        stage('checkout'){
             steps{
                 git credentialsId: 'git', url: 'https://github.com/Raksham7/koddas_war.git'
             }
         }
-        stage('Build') {
-            steps {
-                sh "mvn clean install"
+        stage('Build'){
+            steps{
+                sh 'mvn clean package'
             }
         }
      }
